@@ -24,8 +24,10 @@ This document provides screenshots and analysis of resource usage (memory and CP
         - Total CPU Used: `100%`, of which _External Code_: `80%` and _File System_: `20%`
         
     The application primarily uses functions from external code, indicating a high dependency on system libraries and minimal CPU-intensive calculations within the application itself.
-    
-2. _Memory Allocations_
+   ![cpu](https://github.com/user-attachments/assets/66be377c-bd2e-4fb0-8113-7e0fbf6d1a15)
+
+
+3. _Memory Allocations_
      
     This screenshot displays the memory allocations made by the application during runtime. Most allocations are managed by system modules, such as _ntdll.dll_, _kernel32.dll_, and _wow64.dll_, which are essential libraries for core operations.
 
@@ -37,9 +39,10 @@ This document provides screenshots and analysis of resource usage (memory and CP
         - `wow64.dll`: manages compatibility between different architectures (32-bit and 64-bit).
         
     This memory distribution indicates that the application relies mainly on system functions for its operations.
+     ![mem1](https://github.com/user-attachments/assets/c251e7db-8b19-4c59-bf88-662e34c18ea8)
     
 
-3. _Memory Usage Over Time_
+4. _Memory Usage Over Time_
      
     This graph shows memory usage over the application’s runtime. In the test performed, no significant increases were observed, and memory usage remained steady at 52.3 KB.
 
@@ -49,7 +52,8 @@ This document provides screenshots and analysis of resource usage (memory and CP
         - Total Memory Used: 52.3 KB
         
     This suggests that the application does not experience memory leaks during runtime and that no additional large allocations occur after initialization.
-    
+    ![mem2](https://github.com/user-attachments/assets/16abb16d-dbd6-4f66-abda-60fd2f567f91)
+
     
 **Medium file**
 
@@ -65,7 +69,9 @@ This document provides screenshots and analysis of resource usage (memory and CP
         - Total CPU Used: `100%`, of which _External Code_: `75%` and _I/O Operations_: `25%`
         
     The application primarily uses functions from external code, indicating a high dependency on system libraries and minimal CPU-intensive calculations within the application itself.
-    
+    ![cpuM](https://github.com/user-attachments/assets/3a3f80ee-d197-4abe-8b5a-3b96628756d8)
+
+
 2. _Memory Allocations_
      
     This screenshot displays the memory allocations made by the application during runtime. Most allocations are managed by system modules, such as _ntdll.dll_, _kernel32.dll_, and _wow64.dll_, which are essential libraries for core operations.
@@ -78,7 +84,8 @@ This document provides screenshots and analysis of resource usage (memory and CP
         - `wow64.dll`: manages compatibility between different architectures (32-bit and 64-bit).
         
     This memory distribution indicates that the application relies mainly on system functions for its operations.
-    
+    ![mem1M](https://github.com/user-attachments/assets/f18e543a-d6e6-4b07-864b-ec409e806bfd)
+
 
 3. _Memory Usage Over Time_
      
@@ -90,7 +97,9 @@ This document provides screenshots and analysis of resource usage (memory and CP
         - Total Memory Used: 54.21 KB
         
     This suggests that the application does not experience memory leaks during runtime and that no additional large allocations occur after initialization.
-    
+    ![mem2M](https://github.com/user-attachments/assets/d7d01008-8f86-4744-913f-f37375385cd7)
+
+
 **Large file**
 
 1. _CPU Usage_
@@ -106,7 +115,9 @@ This document provides screenshots and analysis of resource usage (memory and CP
         - Total CPU Used: `100%`,with selectionSort consuming the majority of CPU time, of which _I/O Operations_: 99.3%, _Kernel_: 0.6%, _Graphics_: <0.1% and _File System_: <0.1%
         
     This indicates that the selectionSort function is highly CPU-intensive, with a large dependency on I/O operations due to reading and writing data.
-    
+![WhatsApp Image 2024-fg11-11 at 21 59 08](https://github.com/user-attachments/assets/9d7c853c-78b2-4612-8ebe-32ef13b6dc2c)
+
+
 2. _Memory Allocations_
      
     This screenshot displays the memory allocations made by the application during runtime. Most allocations are managed by system modules, such as _ntdll.dll_, _kernel32.dll_, and _wow64.dll_, which are essential libraries for core operations.
@@ -119,6 +130,8 @@ This document provides screenshots and analysis of resource usage (memory and CP
         - `wow64.dll`: manages compatibility between different architectures (32-bit and 64-bit).
         
     This memory distribution indicates that the application relies mainly on system functions for its operations, with a significant increase in memory allocated due to the larger file size.
+![WhatsApp Image 2024-11werf-11 at 22 01 48](https://github.com/user-attachments/assets/99d27aaa-af8b-435d-a3b2-a431eb296453)
+
 
 3. _Memory Usage Over Time_
      
@@ -130,7 +143,8 @@ This document provides screenshots and analysis of resource usage (memory and CP
         - Total Memory Used: 452.49 KB
         
     This suggests that the application does not experience memory leaks during runtime, even with the larger file, and that no additional large allocations occur after initialization.
-    
+     ![WhatsApp Image 2024-11edfcs-11 at 22 03 22](https://github.com/user-attachments/assets/cae3b828-3d94-42b5-820a-49481bf6f7ae)
+
     
 ## Comparative Analysis: Small, Medium, and Large Files
 

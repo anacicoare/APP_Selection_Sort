@@ -1,6 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <limits.h>
+#include <omp.h>
 
+// Structure for enabling reduction on the index of elements
+struct Compare
+{
+    int val;
+    int index;
+};
+
+// Custom reduction for finding the index of the max element
+#pragma omp declare reduction(maximum : struct Compare : omp_out = omp_in.val > omp_out.val ? omp_in : omp_out)
+
+// Function to swap two elements
 static inline void swap(int *v, int i, int j)
 {
     int aux = v[i];
@@ -8,22 +21,32 @@ static inline void swap(int *v, int i, int j)
     v[j] = aux;
 }
 
+// Function to perform selection sort on a row
 void selectionSort(int *v, int n)
 {
     for (int i = n - 1; i > 0; --i)
     {
-        int max = i;
+        struct Compare max;
+        max.val = v[i];
+        max.index = i;
+
+// Parallel reduction to find the max element
+#pragma omp parallel for reduction(maximum : max)
         for (int j = i - 1; j >= 0; --j)
         {
-            if (v[j] > v[max])
+            if (v[j] > max.val)
             {
-                max = j;
+                max.val = v[j];
+                max.index = j;
             }
         }
-        swap(v, i, max);
+
+        // Swap the found maximum element with the last element
+        swap(v, i, max.index);
     }
 }
 
+// Function to print a matrix
 void printMatrix(int **matrix, int rows, int cols)
 {
     for (int i = 0; i < rows; ++i)
@@ -48,6 +71,8 @@ int main(int argc, char *argv[])
         exit(1);
     }
 
+    omp_set_num_threads(4); // Set the number of OpenMP threads
+
     // Read matrix dimensions
     file = fopen(argv[1], "r");
     fscanf(file, "%d %d", &rows, &cols);
@@ -64,7 +89,8 @@ int main(int argc, char *argv[])
     }
     fclose(file);
 
-    // Sort each row
+// Sort each row in parallel
+#pragma omp parallel for
     for (i = 0; i < rows; ++i)
     {
         selectionSort(matrix[i], cols);

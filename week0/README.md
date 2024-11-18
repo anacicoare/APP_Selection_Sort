@@ -165,5 +165,35 @@ This document provides screenshots and analysis of resource usage (memory and CP
     - `Memory Stability`: All file sizes demonstrated stable memory usage over time, suggesting that the application does not experience memory leaks, even when processing larger files.
     - `Effect of File Size`: The larger file required a substantial increase in initial memory usage, but this remained stable once allocated, indicating efficient memory handling.    
 
-    
+## Small file
+
+![WhatsApp Image 2024-11-18 at 23 27 36](https://github.com/user-attachments/assets/97e14f1c-f0c5-4fc8-a79d-bd25deff933c)
+
+![WhatsApp Image 2024-11-18 at 23 28 13](https://github.com/user-attachments/assets/e97fb76e-fd52-4c6c-b64d-9efced72a944)
+
+![WhatsApp Image 2024-11-18 at 23 29 21](https://github.com/user-attachments/assets/f8c7bec3-2340-42c5-a907-e4cfa5fc17c9)
+
+![WhatsApp Image 2024-11-19 at 00 16 53](https://github.com/user-attachments/assets/3489ebe1-48b9-411a-ab7f-8809958f1091)
+
+## Medium file
+
+![WhatsApp Image 2024-11-19 at 00 14 17](https://github.com/user-attachments/assets/ccf9ef8f-3937-4e70-a51a-413481ab7535)
+
+![WhatsApp Image 2024-11-19 at 00 14 34](https://github.com/user-attachments/assets/f1e9af12-48b1-4200-bac1-18fb0b97c03b)
+
+![WhatsApp Image 2024-11-19 at 00 15 02](https://github.com/user-attachments/assets/d85a1c59-e807-45c2-9b1f-a097840a38d7)
+
+![WhatsApp Image 2024-11-19 at 00 15 41](https://github.com/user-attachments/assets/5722f3f4-e9a9-4907-9276-d2854d768835)
+
+
+## Big file
+
+![WhatsApp Image 2024-11-19 at 00 11 06](https://github.com/user-attachments/assets/531f8523-3c3a-434d-874d-ef96c619340f)
+
+![WhatsApp Image 2024-11-19 at 00 11 21](https://github.com/user-attachments/assets/b922a962-e5cf-48b7-ad25-8b78fa1ee985)
+
+![WhatsApp Image 2024-11-19 at 00 11 56](https://github.com/user-attachments/assets/c45da7b1-2ce1-48c6-8269-de504ba624b0)
+
+![WhatsApp Image 2024-11-19 at 00 17 46](https://github.com/user-attachments/assets/271f401a-0d19-4742-b9f9-8491e5b483c9)
+
 
